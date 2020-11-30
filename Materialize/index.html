@@ -1,0 +1,171 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
+  <title>El Clima</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+</head>
+
+<body>
+  <!-- Nav Bar-->
+  <nav class="light-fff lighten-1" role="navigation">
+    <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo formato-logo">El Clima</a>
+      <ul class="right hide-on-med-and-down">
+        <li><input id="search" type="search" required class="inp-st"></li>
+        <li><a class="btn-floating btn-large cyan " onclick="buscar();"><i class="material-icons">search</i></a></li>
+
+        <li><a href="#">Añadir</a>
+        <li><a class="btn-floating btn-large cyan" onclick="openForm()"><i class="material-icons">add</i></a></li>
+        <li><a href="">Listar</a></li>
+        <li><a class="btn-floating btn-large cyan "><i class="material-icons">list</i></a></li>
+
+      </ul>
+
+      <ul id="nav-mobile" class="sidenav light-fff pop-nav">
+        <li><a href="#" id="anadir" onclick="openForm()">Añadir</a></li>
+        <li><a href="">Listar</a></li>
+      </ul>
+      <a href="#" data-target="nav-mobile" class="sidenav-trigger ajusta-ico"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+
+
+  <div class="row center-align tam-max-form"  style="background-color: transparent;">
+    <div class="col s12 m4 l8">
+      <div class="form-popup" id="myForm">
+        <form action="/action_page.php" class="form-container">
+          <div class="input-field col s6">
+
+            <!--  
+            <input id="icon_prefix" type="text" class="validate" placeholder="Ciudad" class="InputValue" >
+            -->
+            <input type="text" class="inputValue" placeholder="Ingrese una Ciudad">
+          </div>
+          <div class="input-field col s3">
+            <a class="btn-floating btn-large green pulse" onclick="agregar();"><i class="material-icons">add</i></a>
+          </div>
+          <div class="input-field col s3">
+            <a class="btn-floating btn-large red pulse" onclick="eliminar();"><i class="material-icons">remove</i></a>
+          </div>
+          <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="row center-align tam-max-form" >
+    <form class="col s12">
+      <div class="row">
+        <div class="input-field col s8">
+          <i class="material-icons prefix">location_city</i>
+
+          <!--  
+          <input id="icon_prefix" type="text" class="validate" placeholder="Ciudad" class="InputValue" >
+          -->
+          <input type="text" class="inputValue2" placeholder="Ingrese una Ciudad">
+        </div>
+        <div class="input-field col s2">
+          <a class="btn-floating btn-large green pulse" onclick="agregar2();"><i class="material-icons">add</i></a>
+        </div>
+        <div class="input-field col s2">
+          <a class="btn-floating btn-large red pulse" onclick="eliminar2();"><i class="material-icons">remove</i></a>
+        </div>
+      </div>
+    </form>
+  </div>
+
+
+
+  <!--
+  <div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+      <br><br>
+      <h1 class="header center orange-text">Starter Template</h1>
+      <div class="row center">
+        <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
+      </div>
+      <div class="row center">
+        <a href="http://materializecss.com/getting-started.html" id="download-button" class="btn-large waves-effect waves-light orange">Get Started</a>
+      </div>
+      <br><br>
+
+    </div>
+  </div>
+ -->
+
+  <div class="container">
+    <div class="section">
+
+      <div class="row" id="datos">
+
+
+
+
+      </div>
+
+    </div>
+    <br><br>
+  </div>
+
+  <footer class="page-footer black">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">Blablabla</h5>
+          <p class="grey-text text-lighten-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro vel vitae
+            qui fuga nemo voluptatum quae, eum recusandae, et cumque voluptas repudiandae totam sequi quisquam ipsa
+            voluptate tempore. Quidem, pariatur!</p>
+
+
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Interes</h5>
+          <ul>
+            <li><a class="white-text" href="#!">Link 1</a></li>
+            <li><a class="white-text" href="#!">Link 2</a></li>
+            <li><a class="white-text" href="#!">Link 3</a></li>
+            <li><a class="white-text" href="#!">Link 4</a></li>
+          </ul>
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Redes Sociales</h5>
+          <ul>
+            <li><i class="fab fa-facebook-square fa-2x padd"></i> <a class="white-text footer-size"
+                href="#!">Facebook</a></li>
+            <li><i class="fab fa-twitter-square fa-2x padd"></i><a class="white-text footer-size" href="#!">Twitter</a>
+            </li>
+            <li><i class="fab fa-linkedin fa-2x padd"></i><a class="white-text footer-size" href="#!">LinkedIn</a></li>
+            <li><i class="fab fa-instagram fa-2x padd"></i><a class="white-text footer-size" href="#!">Instagram</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+        Realizado por <a class="white-text text-lighten-3" href="#">Joshua Zamorano</a>
+      </div>
+    </div>
+  </footer>
+
+
+  <!--  Scripts-->
+  <script src="https://kit.fontawesome.com/2b53710f8c.js" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="js/materialize.js"></script>
+  <script src="js/init.js"></script>
+  <script src="./js/js.js"></script>
+
+
+
+
+</body>
+
+</html>
